@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+clojure -M --main cljs.main --compile browser_eval.main
