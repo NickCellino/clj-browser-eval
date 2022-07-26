@@ -1,25 +1,30 @@
-(ns browser-eval.main
-  (:require [clojure.browser.repl :as repl]))
+(ns browser-eval.main)
 
-(.log js/console "whatss up world?")
-(repl/connect "http://localhost:3000/repl")
-(.log js/console "did repl connect thing")
+(.log js/console "starting clojurescript...")
+(.log js/console (. js/scittle -core))
 
+(defn my-eval
+  [s]
+  (-> js/scittle
+      (. -core)
+      (.eval_string s)))
 
-(def app-state (atom {:todos 0}))
+(defn replace-elem
+  [id content]
+  (-> js/document
+      (.getElementById id)
+      (.-innerHTML)
+      (set! content)))
 
-(defn add-todo
+(defn eval-user-input
   []
-  (swap! app-state
-         (fn [current-state]
-           (merge-with + current-state {:todos 1})))
-  (.log js/console (:todos @app-state)))
+  (let [user-code (-> js/document
+                     (.getElementById "code")
+                     (. -value))
+        evaled (my-eval user-code)]
+    (replace-elem "result" evaled)))
 
 (-> js/document
-    (.getElementById "add-todo")
-    (.addEventListener "click" (fn [] (add-todo))))
-
-
-(comment
-  (.log js/console #'add-todo))
+    (.getElementById "eval-btn")
+    (.addEventListener "click" eval-user-input))
 

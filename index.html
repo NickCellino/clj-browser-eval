@@ -2,14 +2,21 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/scittle@0.2.8/dist/scittle.js" type="text/javascript"></script>
   </head>
   <body>
     <script src="out/main.js" type="text/javascript"></script>
 
-    <button id="add-todo">Add todo</button>
-    <button id="remove-todo">Remove todo</button>
+    <textarea type="textarea" rows="5" id="code"></textarea>
+    <div>
+      <button id="eval-btn">Eval</button>
+    </div>
 
-    <p>Number of todos <div id="num-todos">0</div></p>
+    <div>
+      <strong>Result:</strong>
+      <span id="result">
+      </span>
+    </div>
 
   </body>
 </html>
