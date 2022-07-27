@@ -6,10 +6,17 @@
   <body>
     <script src="out/main.js" type="text/javascript"></script>
 
-    <textarea type="textarea" rows="5" id="code"></textarea>
-    <div>
-      <button id="eval-btn">Eval</button>
+    <div clj-interpreter class="first">
+      <textarea clj-code type="textarea" rows="5" id="code">this is a test</textarea>
+      <button clj-eval id="eval-btn">Eval</button>
     </div>
+
+    <div clj-interpreter class="second">
+      <textarea clj-code type="textarea" rows="5" id="code">this is not a test</textarea>
+      <button clj-eval id="eval-btn">Eval</button>
+    </div>
+
+    <div clj-interp>hi</div>
 
     <div>
       <strong>Result:</strong>
