@@ -17,7 +17,10 @@
   (let [user-code (-> js/document
                      (.getElementById "code")
                      (. -value))
-        evaled (eval-string user-code)]
+        evaled (try
+                 (eval-string user-code)
+                 (catch js/Error e
+                   (.log js/console "An error occurred:" e)))]
     (replace-elem "result" evaled)))
 
 (defn register-eval-listener

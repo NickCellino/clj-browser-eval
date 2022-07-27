@@ -1,3 +1,4 @@
-(ns browser-eval.browser)
+(ns browser-eval.browser
+  (:require [cljs.pprint]))
 
-(.log js/console "Hello world")
+(.log js/console "Hello worl")

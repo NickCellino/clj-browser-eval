@@ -16,3 +16,7 @@ Then:
 3. Load up localhost:9000 in the browser
 
 REPL should be all set and connected to browser!
+
+## Notes
+
+The main.js file needs to require cljs.pprint in order for piggieback to not get mad. I don't know why this is, but it be like that.
