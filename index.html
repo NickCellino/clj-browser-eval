@@ -12,13 +12,12 @@
     <div clj-interpreter>
       <textarea clj-code type="textarea" rows="9" cols="80" id="code">
 (defn fib
-  [i]
-  (cond
-    (= i 0) 0
-    (= i 1) 1
-    :else (+ (fib (- i 1)) (fib (- i 2)))))
+  []
+  (map first
+    (iterate
+      (fn [[a b]] [b (+ a b)]) [0 1])))
 
-(map fib (range 10))</textarea>
+(take 10 (fib))</textarea>
       <div>
         <button clj-eval>Evaluate</button>
       </div>
