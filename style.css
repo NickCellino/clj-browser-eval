@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:ital,wght@0,400;0,600;1,400;1,600&family=Mukta:wght@300&display=swap');
+
+/* text */
+body {
+  margin: 0 auto;
+  max-width: 50em;
+  font-family: "Ibarra Real Nova",  serif;
+  line-height: 1.5;
+  padding: 2em 1em;
+  font-size: large;
+}
+
+h1, h2, h3 {
+  font-family: "Mukta", "Helvetica", "Arial", sans-serif;
+}
+
+h2 {
+  margin-top: 0.25em;
+  padding-top: 0.5em;
+}
+
+code {
+  padding: 2px 4px;
+  vertical-align: text-bottom;
+}
+pre {
+  padding: 1em;
+}
+
+/* Colors taken from: https://coolors.co/b8b8b8-44ffd2-00a8b8-daf5ff-ffbfa0 */
+body {
+  color: #141414; /* grey */
+}
+
+code, pre {
+  background: #F5F5F5;
+  border-bottom: 2px solid #DAF5FF;
+}
+
+pre {
+  border-left: 2px solid #00bbcc; /* blue */
+}
+
+a {
+  color: #00A8B8; /* darker blue */
+}
+
+h1, h2, h3, strong {
+  color: #000;
+}
+
+/* tables */
+table, th, td {
+  border-collapse: collapse;
+  border: 1px solid;
+}

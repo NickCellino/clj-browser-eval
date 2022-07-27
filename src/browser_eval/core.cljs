@@ -1,4 +1,4 @@
-(ns browser-eval.clj-eval
+(ns browser-eval.core
   (:require [scittle.core :as scittle]))
 
 (defn eval-string
