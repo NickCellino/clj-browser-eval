@@ -7,9 +7,9 @@
   <body>
     <script src="out/main.js" type="text/javascript"></script>
 
-    <h1>clj-browser-eval Demo</h1>
+    <h1>clj-browser-eval demo</h1>
 
-    <div clj-interpreter class="first">
+    <div clj-interpreter>
       <textarea clj-code type="textarea" rows="9" cols="80" id="code">
 (defn fib
   [i]
@@ -25,18 +25,14 @@
       <pre clj-result></pre>
     </div>
 
-    <div clj-interpreter class="second">
-      <textarea clj-code type="textarea" rows="5" id="code">this is not a test</textarea>
-      <button clj-eval id="eval-btn">Eval</button>
+    <h2>another one</h2>
+    <div clj-interpreter>
+      <textarea clj-code type="textarea" rows="9" cols="80">(apply + (range 10))</textarea>
+      <div>
+        <button clj-eval>>></button>
+      </div>
+      <div>
+        <strong>Result: </strong><span clj-result></span>
     </div>
-
-    <div clj-interp>hi</div>
-
-    <div>
-      <strong>Result:</strong>
-      <span id="result">
-      </span>
-    </div>
-
   </body>
 </html>

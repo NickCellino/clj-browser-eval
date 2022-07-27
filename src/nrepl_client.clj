@@ -14,6 +14,6 @@
   :cljs/quit
 
   (+ 1 2)
-  (.log js/console "hey")
-  (.alert js/window "hey there"))
+  (.log js/console "Hello")
+  (.alert js/window "Warning, this is an alert."))
 

@@ -49,8 +49,3 @@ h1, h2, h3, strong {
   color: #000;
 }
 
-/* tables */
-table, th, td {
-  border-collapse: collapse;
-  border: 1px solid;
-}
