@@ -22,3 +22,4 @@ pom.xml.asc
 out/
 .lsp/
 .clj-kondo/
+.cljs_node_repl/

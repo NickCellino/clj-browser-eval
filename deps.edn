@@ -1,2 +1,7 @@
-{:deps {org.clojure/clojurescript {:mvn/version "1.10.758"}}}
+{:deps {org.clojure/clojurescript {:mvn/version "1.10.758"}
+        io.github.babashka/scittle {:git/tag "v0.2.8" :git/sha "f6e7b28"}}
+ :aliases {:nrepl
+            {:extra-deps
+              {nrepl/nrepl {:mvn/version "0.8.3"}
+               cider/piggieback {:mvn/version "0.5.3"}}}}}
 

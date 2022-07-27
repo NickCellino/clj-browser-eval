@@ -1,13 +1,9 @@
-(ns browser-eval.main)
+(ns browser-eval.main
+  (:require
+    [scittle.core :refer [eval-string]]
+    [clojure.browser.dom :refer [log]]))
 
 (.log js/console "starting clojurescript...")
-(.log js/console (. js/scittle -core))
-
-(defn my-eval
-  [s]
-  (-> js/scittle
-      (. -core)
-      (.eval_string s)))
 
 (defn replace-elem
   [id content]
@@ -21,10 +17,16 @@
   (let [user-code (-> js/document
                      (.getElementById "code")
                      (. -value))
-        evaled (my-eval user-code)]
+        evaled (eval-string user-code)]
     (replace-elem "result" evaled)))
 
-(-> js/document
-    (.getElementById "eval-btn")
-    (.addEventListener "click" eval-user-input))
+(defn register-eval-listener
+  []
+  (-> js/document
+      (.getElementById "eval-btn")
+      (.addEventListener "click" eval-user-input)))
 
+(comment
+  (register-eval-listener)
+
+  (replace-elem "result" "ff"))

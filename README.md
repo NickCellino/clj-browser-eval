@@ -7,7 +7,12 @@ bin/compile
 
 To startup a REPL, run:
 ```bash
-bin/repl-client
+bin/nrepl
 ```
 
-Load up localhost:3000 in the browser, then the REPL should be active.
+Then:
+1. Start up Neovim
+2. Execute file `nrepl_client`
+3. Load up localhost:9000 in the browser
+
+REPL should be all set and connected to browser!
