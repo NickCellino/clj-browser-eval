@@ -13,10 +13,7 @@ bin/nrepl
 Then:
 1. Start up Neovim
 2. Execute file `nrepl_client`
-3. Load up localhost:9000 in the browser
+3. Browser should automatically open up to localhost:9000
 
 REPL should be all set and connected to browser!
 
-## Notes
-
-The main.js file needs to require cljs.pprint in order for piggieback to not get mad. I don't know why this is, but it be like that.
