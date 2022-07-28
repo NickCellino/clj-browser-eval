@@ -10,7 +10,7 @@ CodePen: [https://codepen.io/nichelodean/pen/zYWEgeW](https://codepen.io/nichelo
 
 In your html:
 ```html
-<script src="https://cdn.jsdelivr.net/npm/clj-browser-eval@0.0.4/dist/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clj-browser-eval@0.0.5/dist/index.js"></script>
 
 <div clj-interpreter>
   <textarea clj-code></textarea>
@@ -31,8 +31,8 @@ In your html:
 
 You can do as many of these on a page as you like!
 
-```
-<script src="https://cdn.jsdelivr.net/npm/clj-browser-eval@0.0.4/dist/index.js"></script>
+```html
+<script src="https://cdn.jsdelivr.net/npm/clj-browser-eval@0.0.5/dist/index.js"></script>
 
 <div clj-interpreter>
   <textarea clj-code></textarea>
