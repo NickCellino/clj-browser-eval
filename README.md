@@ -13,17 +13,8 @@ In your html:
 <script src="https://cdn.jsdelivr.net/npm/clj-browser-eval@0.0.4/dist/index.js"></script>
 
 <div clj-interpreter>
-  <textarea clj-code type="textarea" rows="9" cols="80">
-(defn fib
-  []
-  (map first
-    (iterate
-      (fn [[a b]] [b (+ a b)]) [0 1])))
-
-(take 10 (fib))</textarea>
-  <div>
-    <button clj-eval>Evaluate</button>
-  </div>
+  <textarea clj-code></textarea>
+  <button clj-eval>Evaluate</button>
   <pre clj-result></pre>
 </div>
 ```
