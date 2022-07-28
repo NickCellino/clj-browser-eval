@@ -33,4 +33,4 @@
     (doseq [interp-dom-node interpreters]
       (register-clj-interpreter interp-dom-node))))
 
-(init)
+(set! (.-onload js/window) init)

@@ -20,6 +20,7 @@ pom.xml.asc
 # End of https://www.toptal.com/developers/gitignore/api/clojure
 
 out/
+dist/
 .lsp/
 .clj-kondo/
 .cljs_node_repl/

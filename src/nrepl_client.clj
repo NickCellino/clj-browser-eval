@@ -2,15 +2,16 @@
   (:require [cljs.repl.browser :as browser]))
 
 (defn start-cljs-repl
+  "This can be used to start a CLJS REPL in local development."
   []
   (cider.piggieback/cljs-repl
     (browser/repl-env
-      :repl-verbose true
       :static-dir ["." "out"])))
 
 (comment
   "Evaluate this to start CLJS REPL"
   (start-cljs-repl)
+
   :cljs/quit
 
   (+ 1 2)

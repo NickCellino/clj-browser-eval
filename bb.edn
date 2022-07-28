@@ -1,0 +1,8 @@
+{:tasks
+ {:requires ([babashka.fs :as fs])
+
+  dev {:doc "Builds production artifacts."
+       :task (clojure "-M -m cljs.main -o dist/index.js -c browser-eval.core")}
+
+  prod {:doc "Builds production artifacts."
+        :task (clojure "-M -m cljs.main -o dist/index.js --optimizations advanced --compile browser-eval.core")}}}
