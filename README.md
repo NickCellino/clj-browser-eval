@@ -27,7 +27,33 @@ In your html:
 
 `clj-result` (optional - results will be window.alert'ed if this is not provided) designates where the result should go
 
-### installing with npm
+### multiple interpreters on one page
+
+You can do as many of these on a page as you like!
+
+```
+<script src="https://cdn.jsdelivr.net/npm/clj-browser-eval@0.0.4/dist/index.js"></script>
+
+<div clj-interpreter>
+  <textarea clj-code></textarea>
+  <button clj-eval>Evaluate</button>
+  <pre clj-result></pre>
+</div>
+
+<div clj-interpreter>
+  <textarea clj-code></textarea>
+  <button clj-eval>Evaluate</button>
+  <pre clj-result></pre>
+</div>
+
+<div clj-interpreter>
+  <textarea clj-code></textarea>
+  <button clj-eval>Evaluate</button>
+  <pre clj-result></pre>
+</div>
+```
+
+## installing with npm
 
 ```bash
 npm install clj-browser-eval
