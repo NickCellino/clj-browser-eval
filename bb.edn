@@ -1,8 +1,14 @@
 {:tasks
- {:requires ([babashka.fs :as fs])
+ {:requires ([babashka.fs :as fs]
+             [cheshire.core :as json])
 
   dev {:doc "Builds production artifacts."
        :task (clojure "-M -m cljs.main -o dist/index.js -c browser-eval.core")}
 
   prod {:doc "Builds production artifacts."
-        :task (clojure "-M -m cljs.main -o dist/index.js --optimizations advanced --compile browser-eval.core")}}}
+        :task (clojure "-M -m cljs.main -o dist/index.js --optimizations advanced --compile browser-eval.core")}
+
+  bump-version {:doc "bump package.json version and push new git tag"
+                :task (do (shell "npm version patch")
+                          (shell "git push --atomic origin master"
+                                 (str "v" (:version (json/parse-string (slurp "package.json") true)))))}}}
