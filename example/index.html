@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
 
-    <script src="dist/index.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clj-browser-eval@0.0.3/dist/index.js" type="text/javascript"></script>
   </head>
   <body>
     <h1>clj-browser-eval demo</h1>
 
     <div clj-interpreter>
-      <textarea clj-code type="textarea" rows="9" cols="80" id="code">
+      <textarea clj-code type="textarea" rows="9" cols="80">
 (defn fib
   []
   (map first
     (iterate
       (fn [[a b]] [b (+ a b)]) [0 1])))
 
-(take 10 (fib))</textarea>
+      (take 10 (fib))</textarea>
       <div>
         <button clj-eval>Evaluate</button>
       </div>
@@ -32,6 +32,7 @@
       </div>
       <div>
         <strong>Result: </strong><span clj-result></span>
+      </div>
     </div>
 
   </body>

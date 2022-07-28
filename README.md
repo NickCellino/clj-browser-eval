@@ -1,22 +1,51 @@
-# Running and stuff
+# clj-browser-eval
 
-To compile the frontend code, run
-```bash
-bin/compile
+This is a thing that lets you turn any HTML input field into a Clojure interpreter.
+
+![clj-browser-eval.gif](./example/clj-browser-eval.gif)
+
+CodePen: [https://codepen.io/nichelodean/pen/zYWEgeW](https://codepen.io/nichelodean/pen/zYWEgeW)
+
+## quick start
+
+In your html:
+```html
+<script src="https://cdn.jsdelivr.net/npm/clj-browser-eval@0.0.4/dist/index.js"></script>
+
+<div clj-interpreter>
+  <textarea clj-code type="textarea" rows="9" cols="80">
+(defn fib
+  []
+  (map first
+    (iterate
+      (fn [[a b]] [b (+ a b)]) [0 1])))
+
+(take 10 (fib))</textarea>
+  <div>
+    <button clj-eval>Evaluate</button>
+  </div>
+  <pre clj-result></pre>
+</div>
 ```
 
-To startup a REPL, run:
+`clj-interpreter` marks the container div for an interpreter
+
+`clj-code` marks the text input that you want to use as the input for the interpreter
+
+`clj-eval` designates the button (or any clickable thing) that you want to use to trigger evaluation
+
+`clj-result` (optional - results will be window.alert'ed if this is not provided) designates where the result should go
+
+### installing with npm
+
 ```bash
-bin/nrepl
+npm install clj-browser-eval
 ```
 
-Then:
-1. Start up Neovim
-2. Execute file `nrepl_client`
-3. Load up localhost:9000 in the browser
+## some considerations
 
-REPL should be all set and connected to browser!
+I have no idea what I'm doing and you should not use this for anything real.
 
-## Notes
+## credits
 
-The main.js file needs to require cljs.pprint in order for piggieback to not get mad. I don't know why this is, but it be like that.
+Made possible by [scittle](https://github.com/babashka/scittle)!
